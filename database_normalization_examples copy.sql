@@ -1,3 +1,164 @@
+-- First Normal Form (1NF)
+-- Entity: PlayerInventory
+-- Attributes:
+
+-- Player_ID (PK, VARCHAR(50))
+-- Item_Type (PK, VARCHAR(50))
+-- Item_Quantity (INT)
+-- Primary Key: Composite key (Player_ID, Item_Type)
+
+-- Relationships:
+
+-- At this level, there are no relationships with other tables.
+-- Second Normal Form (2NF)
+-- Entity: Player
+-- Attributes:
+
+-- Player_ID (PK, VARCHAR(50))
+-- Player_Rating (VARCHAR(50))
+-- Primary Key: Player_ID
+
+-- Entity: PlayerInventory
+-- Attributes:
+
+-- Player_ID (PK, FK, VARCHAR(50))
+-- Item_Type (PK, VARCHAR(50))
+-- Item_Quantity (INT)
+-- Primary Key: Composite key (Player_ID, Item_Type)
+
+-- Foreign Key:
+
+-- Player_ID references Player(Player_ID)
+-- Relationships:
+
+-- Player (1) —— (M) PlayerInventory
+-- One player can have many inventory items.
+-- Each inventory item belongs to one player.
+-- Third Normal Form (3NF)
+-- Entity: Player
+-- Attributes:
+
+-- Player_ID (PK, VARCHAR(50))
+-- Player_Skill_Level (INT)
+-- Primary Key: Player_ID
+
+-- Entity: SkillToRating
+-- Attributes:
+
+-- Skill_Level (PK, INT)
+-- Player_Rating (VARCHAR(50))
+-- Primary Key: Skill_Level
+
+-- Entity: PlayerInventory
+-- Attributes:
+
+-- Player_ID (PK, FK, VARCHAR(50))
+-- Item_Type (PK, VARCHAR(50))
+-- Item_Quantity (INT)
+-- Primary Key: Composite key (Player_ID, Item_Type)
+
+-- Foreign Key:
+
+-- Player_ID references Player(Player_ID)
+-- Relationships:
+
+-- Player (1) —— (M) PlayerInventory
+-- Player (M) —— (1) SkillToRating
+-- Through Player_Skill_Level in Player and Skill_Level in SkillToRating.
+-- Fourth Normal Form (4NF)
+-- Entity: Model
+-- Attributes:
+
+-- Model_ID (PK, VARCHAR(50))
+-- Primary Key: Model_ID
+
+-- Entity: ModelColors
+-- Attributes:
+
+-- Model_ID (PK, FK, VARCHAR(50))
+-- Color (PK, VARCHAR(50))
+-- Primary Key: Composite key (Model_ID, Color)
+
+-- Foreign Key:
+
+-- Model_ID references Model(Model_ID)
+-- Entity: ModelStyles
+-- Attributes:
+
+-- Model_ID (PK, FK, VARCHAR(50))
+-- Style (PK, VARCHAR(50))
+-- Primary Key: Composite key (Model_ID, Style)
+
+-- Foreign Key:
+
+-- Model_ID references Model(Model_ID)
+-- Relationships:
+
+-- Model (1) —— (M) ModelColors
+-- Model (1) —— (M) ModelStyles
+-- Fifth Normal Form (5NF)
+-- Entity: People
+-- Attributes:
+
+-- Person_ID (PK, VARCHAR(50))
+-- Primary Key: Person_ID
+
+-- Entity: Brands
+-- Attributes:
+
+-- Brand_ID (PK, VARCHAR(50))
+-- Primary Key: Brand_ID
+
+-- Entity: Flavors
+-- Attributes:
+
+-- Flavor_ID (PK, VARCHAR(50))
+-- Primary Key: Flavor_ID
+
+-- Associative Entity: PeopleBrands
+-- Attributes:
+
+-- Person_ID (PK, FK, VARCHAR(50))
+-- Brand_ID (PK, FK, VARCHAR(50))
+-- Primary Key: Composite key (Person_ID, Brand_ID)
+
+-- Foreign Keys:
+
+-- Person_ID references People(Person_ID)
+-- Brand_ID references Brands(Brand_ID)
+-- Relationships:
+
+-- People (M) —— (M) Brands (through PeopleBrands)
+-- Associative Entity: PeopleFlavors
+-- Attributes:
+
+-- Person_ID (PK, FK, VARCHAR(50))
+-- Flavor_ID (PK, FK, VARCHAR(50))
+-- Primary Key: Composite key (Person_ID, Flavor_ID)
+
+-- Foreign Keys:
+
+-- Person_ID references People(Person_ID)
+-- Flavor_ID references Flavors(Flavor_ID)
+-- Relationships:
+
+-- People (M) —— (M) Flavors (through PeopleFlavors)
+-- Associative Entity: BrandFlavors
+-- Attributes:
+
+-- Brand_ID (PK, FK, VARCHAR(50))
+-- Flavor_ID (PK, FK, VARCHAR(50))
+-- Primary Key: Composite key (Brand_ID, Flavor_ID)
+
+-- Foreign Keys:
+
+-- Brand_ID references Brands(Brand_ID)
+-- Flavor_ID references Flavors(Flavor_ID)
+-- Relationships:
+
+-- Brands (M) —— (M) Flavors (through BrandFlavors)
+
+
 -- ======================================================
 -- Database Normalization Examples from 1NF to 5NF
 -- ======================================================
