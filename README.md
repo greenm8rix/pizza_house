@@ -4,4 +4,4 @@ This diagram illustrates the normalization process for relational databases, fro
 
 ![Database Normalization ERD](databse_erd_all_form.png)
 
-![Database Normalization without ecoomerce ERD](databse.png)
+![Database Normalization without ecoomerce ERD](normalisation.png)
