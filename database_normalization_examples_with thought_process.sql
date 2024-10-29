@@ -159,13 +159,13 @@
 -- Brands (M) —— (M) Flavors (through BrandFlavors)
 
 
--- ======================================================
--- Database Normalization Examples from 1NF to 5NF
--- ======================================================
 
--- ======================================================
+-- Database Normalization Examples from 1NF to 5NF
+
+
+
 -- First Normal Form (1NF)
--- ======================================================
+
 
 -- Drop table if it exists (for repeatability)
 DROP TABLE IF EXISTS PlayerInventory;
@@ -189,9 +189,9 @@ VALUES ('trev73', 'shields', 3),
 DELETE FROM PlayerInventory
 WHERE Player_ID = 'jdog21' AND Item_Type = 'arrows';
 
--- ======================================================
+
 -- Second Normal Form (2NF)
--- ======================================================
+
 
 -- To transition to 2NF, we need to modify the schema
 -- Drop existing tables if they exist
@@ -227,9 +227,9 @@ VALUES ('trev73', 'shields', 3),
 -- Delete player 'jdog21'
 DELETE FROM Player WHERE Player_ID = 'jdog21';
 
--- ======================================================
+
 -- Third Normal Form (3NF)
--- ======================================================
+
 
 -- Modify the schema to remove transitive dependencies
 -- Drop existing tables if they exist
@@ -277,9 +277,9 @@ VALUES ('trev73', 'shields', 3),
 -- Delete skill level 9
 DELETE FROM SkillToRating WHERE Skill_Level = 9;
 
--- ======================================================
+
 -- Fourth Normal Form (4NF)
--- ======================================================
+
 
 -- Transition to a new example for 4NF
 -- Drop existing tables if they exist
@@ -325,9 +325,9 @@ VALUES ('Prairie', 'bungalow'),
 -- Delete color 'beige' for model 'Prairie'
 DELETE FROM ModelColors WHERE Model_ID = 'Prairie' AND Color = 'beige';
 
--- ======================================================
+
 -- Fifth Normal Form (5NF)
--- ======================================================
+
 
 -- Transition to a new example for 5NF
 -- Drop existing tables if they exist
