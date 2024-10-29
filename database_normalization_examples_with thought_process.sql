@@ -31,7 +31,7 @@
 -- Player_ID references Player(Player_ID)
 -- Relationships:
 
--- Player (1) —— (M) PlayerInventory
+-- Player (1) to (M) PlayerInventory
 -- One player can have many inventory items.
 -- Each inventory item belongs to one player.
 -- Third Normal Form (3NF)
@@ -62,8 +62,8 @@
 -- Player_ID references Player(Player_ID)
 -- Relationships:
 
--- Player (1) —— (M) PlayerInventory
--- Player (M) —— (1) SkillToRating
+-- Player (1) to (M) PlayerInventory
+-- Player (M) to (1) SkillToRating
 -- Through Player_Skill_Level in Player and Skill_Level in SkillToRating.
 -- Fourth Normal Form (4NF)
 -- Entity: Model
@@ -94,8 +94,8 @@
 -- Model_ID references Model(Model_ID)
 -- Relationships:
 
--- Model (1) —— (M) ModelColors
--- Model (1) —— (M) ModelStyles
+-- Model (1) to (M) ModelColors
+-- Model (1) to (M) ModelStyles
 -- Fifth Normal Form (5NF)
 -- Entity: People
 -- Attributes:
@@ -128,7 +128,7 @@
 -- Brand_ID references Brands(Brand_ID)
 -- Relationships:
 
--- People (M) —— (M) Brands (through PeopleBrands)
+-- People (M) to (M) Brands (through PeopleBrands)
 -- Associative Entity: PeopleFlavors
 -- Attributes:
 
@@ -142,7 +142,7 @@
 -- Flavor_ID references Flavors(Flavor_ID)
 -- Relationships:
 
--- People (M) —— (M) Flavors (through PeopleFlavors)
+-- People (M) to (M) Flavors (through PeopleFlavors)
 -- Associative Entity: BrandFlavors
 -- Attributes:
 
@@ -156,7 +156,7 @@
 -- Flavor_ID references Flavors(Flavor_ID)
 -- Relationships:
 
--- Brands (M) —— (M) Flavors (through BrandFlavors)
+-- Brands (M) to (M) Flavors (through BrandFlavors)
 
 
 
